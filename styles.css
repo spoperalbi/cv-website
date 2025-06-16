@@ -1,0 +1,246 @@
+/* Simple, clean, modern design */
+:root {
+    --primary-color: #2d72d9;
+    --secondary-color: #555;
+    --accent-color: #e0e7ef;
+    --background-color: #f9fafb;
+    --card-background: #fff;
+    --text-primary: #222;
+    --text-secondary: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem 1rem;
+}
+
+.content {
+    background: var(--card-background);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2.5rem 2rem 2rem 2rem;
+    text-align: center;
+}
+
+.profile-pic {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    background: #eee;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.role {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.2rem;
+}
+
+.industry {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.social-icon {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    background: var(--accent-color);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.about {
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    padding: 0 0.5rem;
+    text-align: left;
+}
+
+.bio {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+
+.focus-areas {
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.focus-areas h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.7rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.3rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.mission {
+    font-size: 1.05rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 1.2rem;
+}
+
+.accordion-section {
+    margin: 2.5rem auto 1.5rem auto;
+    max-width: 600px;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 1.5rem 1rem;
+}
+
+.accordion-main-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    text-align: left;
+}
+
+.accordion {
+    margin-bottom: 1.2rem;
+}
+
+.accordion-item {
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    background: var(--accent-color);
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-title {
+    width: 100%;
+    background: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.accordion-title:hover, .accordion-title.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #f5f7fa;
+    color: var(--text-primary);
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1rem;
+    font-size: 0.98rem;
+    border-radius: 0 0 8px 8px;
+}
+
+.accordion-content.open {
+    padding: 1rem;
+    max-height: 500px;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content ul {
+    margin: 0.5rem 0 0 1.2rem;
+    padding: 0;
+    list-style: disc;
+}
+
+.accordion-content p {
+    margin: 0 0 0.5rem 0;
+    color: var(--secondary-color);
+    font-size: 0.98rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 0.2rem;
+    }
+    .content {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .accordion-section {
+        padding: 1rem 0.2rem;
+    }
+    .accordion-title {
+        font-size: 0.98rem;
+        padding: 0.7rem 0.7rem;
+    }
+    .accordion-content {
+        font-size: 0.95rem;
+    }
+} 
